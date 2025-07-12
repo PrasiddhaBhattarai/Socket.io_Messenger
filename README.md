@@ -26,7 +26,10 @@ A simple real-time messaging application built with **Node.js**, **Express**, an
 ├── .env
 └── README.md
 ```
-
+## LINK FOR THE WEBSITE
+```
+https://socket-io-messenger.onrender.com/
+```
 ## Installation
 
 1. Clone the repository:
@@ -71,10 +74,12 @@ A simple real-time messaging application built with **Node.js**, **Express**, an
 ## Screenshots
 
 ### Login Page
-![Login Page](https://via.placeholder.com/600x300?text=Login+Page)
+<img width="1916" height="873" alt="image" src="https://github.com/user-attachments/assets/e0afd84c-f410-4a68-8935-a2478626995a" />
+
 
 ### Chat Room
-![Chat Room](https://via.placeholder.com/600x300?text=Chat+Room)
+<img width="1918" height="871" alt="image" src="https://github.com/user-attachments/assets/1be70575-3dc4-4b08-999b-a9d5311379b1" />
+
 
 ## License
 
