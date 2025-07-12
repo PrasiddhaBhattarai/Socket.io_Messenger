@@ -1,0 +1,266 @@
+ /* General Reset */
+ body, h3, ul, li, form {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Basic Page Layout */
+body {
+    background-color: #f4f7fc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px; /* Allows the container to expand up to 500px */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+/* Title and Button */
+h3 {
+    background-color: #3b82f6;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 0;
+}
+
+#join-chat {
+    background-color: #3b82f6;
+    color: white;
+    font-size: 18px;
+    padding: 15px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#join-chat:hover {
+    background-color: #2563eb;
+}
+
+/* Chat Area */
+#chat {
+    padding: 20px;
+    height: 250px;
+    background-color: #fafafa;
+    overflow-y: auto;
+    flex-grow: 1;
+    display: none;
+    border-bottom: 1px solid #ddd;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#chat-header {
+    padding: 10px 20px;
+    background-color: #fafafa;
+    display: none;
+    border-bottom: 1px solid #ddd;
+}
+#chat-header h3{
+    background-color: #4d5873;
+}
+
+/* Message Form */
+#message-form {
+    padding: 20px;
+    display: none;
+    background-color: #f9f9f9;
+}
+
+#message-input {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#message-form button {
+    background-color: #3b82f6;
+    color: white;
+    padding: 10px;
+    border: none;
+    width: 100%;
+    cursor: pointer;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+}
+
+#message-form button:hover {
+    background-color: #2563eb;
+}
+
+/* Message bubbles */
+.message {
+    background-color: #e1f5fe;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    max-width: 80%;
+    word-wrap: break-word;
+}
+
+.message.user {
+    background-color: #d1c4e9;
+    align-self: flex-end;
+}
+
+/* Scrollbar styles */
+#chat::-webkit-scrollbar {
+    width: 8px;
+}
+
+#chat::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+#chat::-webkit-scrollbar-thumb:hover {
+    background-color: #888;
+}
+
+/* User List Section */
+#user-list {
+    position: absolute;
+    right: 5rem;
+    top: 20%;
+    padding: 10px 20px;
+    background-color: #fafafa;
+    display: none;
+    border-bottom: 1px solid #ddd;
+    height: 400px; /* Default height for user list */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Make only the user list <ul> scrollable */
+#user-list ul {
+    padding-block: 10px;
+    list-style-type: none;
+    padding-left: 0; /* Remove default padding from <ul> */
+    max-height: 80%; /* Set a maximum height for the scrollable area */
+    overflow-y: auto; /* Allow vertical scrolling */
+}
+
+/* Scrollbar styles for the <ul> inside user-list */
+#user-list ul::-webkit-scrollbar {
+    width: 8px; /* Set the width of the scrollbar */
+}
+
+#user-list ul::-webkit-scrollbar-track {
+    background-color: transparent; /* Make the track transparent */
+}
+
+#user-list ul::-webkit-scrollbar-thumb {
+    background-color: #ccc; /* Blue color for the thumb */
+    border-radius: 10px; /* Rounded corners for the thumb */
+    border: 2px solid transparent; /* Optional: Adds a transparent border around the thumb */
+}
+
+#user-list ul::-webkit-scrollbar-thumb:hover {
+    background-color: #888; /* Darker blue when hovered */
+}
+
+/* User list items */
+#user-list ul li {
+    background-color: #e1f5fe;
+    padding: 8px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    font-size: 14px;
+    word-wrap: break-word;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    body{
+        justify-content: space-around;
+        display: flex;
+        flex-direction: column;
+        height: max-content;
+        gap: 2rem;
+        padding-block: 2rem;
+    }
+
+    #user-list{
+        position: static;
+    }
+}
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 90%;
+        max-width: 100%;
+        margin: 10px;
+        height: 85vh;
+    }
+
+    #join-chat {
+        font-size: 16px; /* Make button text smaller on smaller screens */
+        padding: 12px;
+    }
+
+    #message-input {
+        font-size: 14px; /* Make input text smaller */
+        padding: 8px;
+    }
+
+    #message-form button {
+        font-size: 16px;
+        padding: 12px;
+    }
+
+    h3 {
+        font-size: 20px;
+        padding: 15px;
+    }
+
+    /* Adjust chat container to be taller on smaller screens */
+    #chat {
+        height: 200px;
+    }
+}
+
+/* For very small screens (like on mobile devices in portrait mode) */
+@media (max-width: 400px) {
+    h3 {
+        font-size: 18px; /* Make the title smaller on very small screens */
+    }
+
+    #join-chat {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #message-input {
+        font-size: 14px;
+        padding: 6px;
+    }
+
+    #message-form button {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #chat {
+        height: 180px; /* Adjust the chat box height further for very small screens */
+    }
+}
